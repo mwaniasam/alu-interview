@@ -5,6 +5,7 @@ This module provides a function to calculate the minimum number
 of operations required to achieve a target number starting from 1.
 """
 
+import math
 
 def min_operations(n):
     """
@@ -17,16 +18,17 @@ def min_operations(n):
         int: The minimum number of operations required. If n is not
              a positive integer, returns 0.
     """
-    if not isinstance(n, int) or n <= 1:
+
+    if n <= 1:
         return 0
 
     operations = 0
-    divisor = 2
+    for i in range(2, int(math.sqrt(abs(n))) + 1):
+        while n % i == 0:
+            operations += i
+            n //= i
 
-    while n > 1:
-        while n % divisor == 0:
-            operations += divisor
-            n //= divisor
-        divisor += 1
+    if n > 1:
+        operations += n
 
     return operations
