@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 
+"""
+This module provides a function to calculate the minimum number
+of operations required to achieve a target number starting from 1.
+"""
+
+
 def min_operations(n):
     """
     Calculate the minimum number of operations required to achieve n from 1.
@@ -8,9 +14,10 @@ def min_operations(n):
         n (int): The target number.
 
     Returns:
-        int: The minimum number of operations.
+        int: The minimum number of operations required. If n is not
+             a positive integer, returns 0.
     """
-    if n <= 1:
+    if not isinstance(n, int) or n <= 1:
         return 0
 
     operations = 0
