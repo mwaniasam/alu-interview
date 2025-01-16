@@ -6,7 +6,7 @@ of operations needed to result in exactly n H characters in a file.
 """
 
 
-def min_operations(n):
+def minOperations(n):
     """
     Calculate the minimum number of operations required to achieve n H characters.
 
